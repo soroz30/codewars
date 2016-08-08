@@ -1,6 +1,11 @@
 def remainder(dividend,divisor)
-  p (0..dividend).to_a.reverse
-  p dividend - (0..dividend).to_a.reverse.detect {|ele| ele / divisor.to_f == divisor.to_f} 
+  p dividend - divisor if dividend<divisor
+  p dividend - (0..dividend).to_a.reverse.detect {|ele| (ele.to_f / divisor.to_f).to_s[-1] == "0"} 
 end
 
-remainder(10, 2)
+remainder(3,2)
+#################################
+
+def remainder(x,y)
+  x-x/y*y
+end
