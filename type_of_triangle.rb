@@ -4,3 +4,10 @@ def type_of_triangle(*args)
 end
 
 type_of_triangle(9,4,3)
+
+##############
+
+def type_of_triangle(a, b, c)
+  return  "Not a valid triangle" if  [a,b,c].any?{|i| i.class != Fixnum} || [a,b,c].min(2).inject(:+) <= [a,b,c].max 
+  {1 => "Equilateral", 2 => "Isosceles", 3 => "Scalene"}[[a,b,c].uniq.length] 
+end
