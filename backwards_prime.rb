@@ -12,3 +12,5 @@ def prime?(n)
   max = Math.sqrt(n).floor
   (2..max).all? { |i| n % i != 0 }
 end
+
+####### w rozwiazaniach primow licz do pierwiastka
