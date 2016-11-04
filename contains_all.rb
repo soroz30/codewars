@@ -14,5 +14,5 @@ def contains_all?(haystack, needle)
 end
 
 def count_eql array, n
-    array.count { |c| c.eql? n} 
+    array.count { |c| c.eql? n} #WAZNE!
 end
