@@ -14,3 +14,18 @@ def gamble(rolls, my_coins, pot)
   end
   my_coins
 end
+
+############
+
+def gamble(rolls, my_coins, pot)
+  dreidel = {
+    Nun: -> { nil },
+    Gimel: -> { my_coins += pot },
+    Hei: -> { my_coins += (pot /= 2).floor },
+    Shin: -> { pot += 1; my_coins -= 1 }
+  }
+  
+  rolls.each { |roll| dreidel[roll.to_sym].call }
+  
+  my_coins
+end
